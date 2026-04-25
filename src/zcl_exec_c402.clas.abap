@@ -53,6 +53,26 @@ CLASS zcl_exec_c402 IMPLEMENTATION.
                                                     name2 = 'value10'
                                                     datasource2 = 'Source2' ) ) ).
 
+   MODIFY zdatasource_3 FROM TABLE @( VALUE #( ( id = '11'
+                                                    name3 = 'value11'
+                                                    datasource3 = 'Source3' )
+                                                 ( id = '08'
+                                                    name3 = 'value8'
+                                                    datasource3 = 'Source2' )
+                                                 ( id = '03'
+                                                    name3 = 'value3'
+                                                    datasource3 = 'Source2' )
+                                                 ( id = '12'
+                                                    name3 = 'value12'
+                                                    datasource3 = 'Source3' )
+                                                 ( id = '13'
+                                                    name3 = 'value13'
+                                                    datasource3 = 'Source3' )
+                                                  ( id = '14'
+                                                    name3 = 'value14'
+                                                    datasource3 = 'Source3' ) ) ).
+
+
   ENDMETHOD.
 
 ENDCLASS.
