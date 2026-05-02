@@ -76,53 +76,53 @@ CLASS zcl_sql_functions IMPLEMENTATION.
 
 * Concat functions
 
-    SELECT SINGLE FROM zdemo_exp_c402
-        FIELDS id,
-               char1,
-               char2,
-               concat( char1, char2 ) as concat,
-               concat_with_space( char1, char2, 2 ) as concatSpace,
-               char1 && char2 && 'Logali' as concatman
-
-               WHERE id = 'L'
-               INTO @DATA(ls_results).
-
-    IF  sy-subrc = 0.
-      out->write( ls_results ).
-    ENDIF.
-
-* Function conversions
-
-*    CONSTANTS lc_currency type c LENGTH 3 VALUE 'EUR'.
-*
 *    SELECT SINGLE FROM zdemo_exp_c402
-*          FIELDS id,
-*                 dec3 AS currentQuantity,
-*                 'MI' AS currentunit,
+*        FIELDS id,
+*               char1,
+*               char2,
+*               concat( char1, char2 ) as concat,
+*               concat_with_space( char1, char2, 2 ) as concatSpace,
+*               char1 && char2 && 'Logali' as concatman
 *
-*                 unit_conversion( quantity = dec3,
-*                                  source_unit = unit`MI`,
-*                                  target_unit = unit`KM`,
-*                                  on_error = @sql_unit_conversion=>c_on_error-set_to_null ) AS ConvertedQuantity,
-*                 'KM' AS ConvertedUnit,
-*
-*
-*                 currency_conversion( amount = amount,
-*                                      source_currency = currency,
-*                                      target_currency = @lc_currency,
-*                                      exchange_rate_date = @( cl_abap_context_info=>get_system_date( ) ),
-*                                      round = 'X',
-*                                      on_error = @sql_currency_conversion=>c_on_error-set_to_null ) as convertedAmount,
-*
-*                 @lc_currency as convertedCurr
-*
-*
-*                 WHERE id = 'L'
-*                 INTO @DATA(ls_results).
+*               WHERE id = 'L'
+*               INTO @DATA(ls_results).
 *
 *    IF  sy-subrc = 0.
 *      out->write( ls_results ).
 *    ENDIF.
+
+* Function conversions
+
+    CONSTANTS lc_currency type c LENGTH 3 VALUE 'EUR'.
+
+    SELECT SINGLE FROM zdemo_exp_c402
+          FIELDS id,
+                 dec3 AS currentQuantity,
+                 'MI' AS currentunit,
+
+                 unit_conversion( quantity = dec3,
+                                  source_unit = unit`MI`,
+                                  target_unit = unit`KM`,
+                                  on_error = @sql_unit_conversion=>c_on_error-set_to_null ) AS ConvertedQuantity,
+                 'KM' AS ConvertedUnit,
+
+
+                 currency_conversion( amount = amount,
+                                      source_currency = currency,
+                                      target_currency = @lc_currency,
+                                      exchange_rate_date = @( cl_abap_context_info=>get_system_date( ) ),
+                                      round = 'X',
+                                      on_error = @sql_currency_conversion=>c_on_error-set_to_null ) as convertedAmount,
+
+                 @lc_currency as convertedCurr
+
+
+                 WHERE id = 'L'
+                 INTO @DATA(ls_results).
+
+    IF  sy-subrc = 0.
+      out->write( ls_results ).
+    ENDIF.
 
   ENDMETHOD.
 

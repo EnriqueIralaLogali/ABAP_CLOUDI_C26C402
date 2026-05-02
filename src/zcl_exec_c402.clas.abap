@@ -15,62 +15,86 @@ CLASS zcl_exec_c402 IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
-    MODIFY zdatasource_1 FROM TABLE @( VALUE #( ( id = '01'
-                                                    name1 = 'value1'
-                                                    datasource1 = 'Source1' )
-                                                 ( id = '02'
-                                                    name1 = 'value2'
-                                                    datasource1 = 'Source1' )
-                                                 ( id = '03'
-                                                    name1 = 'value3'
-                                                    datasource1 = 'Source1' )
-                                                 ( id = '04'
-                                                    name1 = 'value4'
-                                                    datasource1 = 'Source1' )
-                                                 ( id = '05'
-                                                    name1 = 'value5'
-                                                    datasource1 = 'Source1' )
-                                                  ( id = '06'
-                                                    name1 = 'value6'
-                                                    datasource1 = 'Source1' ) ) ).
+*    MODIFY zdatasource_1 FROM TABLE @( VALUE #( ( id = '01'
+*                                                    name1 = 'value1'
+*                                                    datasource1 = 'Source1' )
+*                                                 ( id = '02'
+*                                                    name1 = 'value2'
+*                                                    datasource1 = 'Source1' )
+*                                                 ( id = '03'
+*                                                    name1 = 'value3'
+*                                                    datasource1 = 'Source1' )
+*                                                 ( id = '04'
+*                                                    name1 = 'value4'
+*                                                    datasource1 = 'Source1' )
+*                                                 ( id = '05'
+*                                                    name1 = 'value5'
+*                                                    datasource1 = 'Source1' )
+*                                                  ( id = '06'
+*                                                    name1 = 'value6'
+*                                                    datasource1 = 'Source1' ) ) ).
+*
+*   MODIFY zdatasource_2 FROM TABLE @( VALUE #( ( id = '07'
+*                                                    name2 = 'value7'
+*                                                    datasource2 = 'Source2' )
+*                                                 ( id = '08'
+*                                                    name2 = 'value8'
+*                                                    datasource2 = 'Source2' )
+*                                                 ( id = '03'
+*                                                    name2 = 'value3'
+*                                                    datasource2 = 'Source2' )
+*                                                 ( id = '04'
+*                                                    name2 = 'value4'
+*                                                    datasource2 = 'Source2' )
+*                                                 ( id = '09'
+*                                                    name2 = 'value9'
+*                                                    datasource2 = 'Source2' )
+*                                                  ( id = '10'
+*                                                    name2 = 'value10'
+*                                                    datasource2 = 'Source2' ) ) ).
+*
+*   MODIFY zdatasource_3 FROM TABLE @( VALUE #( ( id = '11'
+*                                                    name3 = 'value11'
+*                                                    datasource3 = 'Source3' )
+*                                                 ( id = '08'
+*                                                    name3 = 'value8'
+*                                                    datasource3 = 'Source2' )
+*                                                 ( id = '03'
+*                                                    name3 = 'value3'
+*                                                    datasource3 = 'Source2' )
+*                                                 ( id = '12'
+*                                                    name3 = 'value12'
+*                                                    datasource3 = 'Source3' )
+*                                                 ( id = '13'
+*                                                    name3 = 'value13'
+*                                                    datasource3 = 'Source3' )
+*                                                  ( id = '14'
+*                                                    name3 = 'value14'
+*                                                    datasource3 = 'Source3' ) ) ).
 
-   MODIFY zdatasource_2 FROM TABLE @( VALUE #( ( id = '07'
-                                                    name2 = 'value7'
-                                                    datasource2 = 'Source2' )
-                                                 ( id = '08'
-                                                    name2 = 'value8'
-                                                    datasource2 = 'Source2' )
-                                                 ( id = '03'
-                                                    name2 = 'value3'
-                                                    datasource2 = 'Source2' )
-                                                 ( id = '04'
-                                                    name2 = 'value4'
-                                                    datasource2 = 'Source2' )
-                                                 ( id = '09'
-                                                    name2 = 'value9'
-                                                    datasource2 = 'Source2' )
-                                                  ( id = '10'
-                                                    name2 = 'value10'
-                                                    datasource2 = 'Source2' ) ) ).
+*  modify zemployee_lgl from table @( value #( ( employee = '1' manager = '' name = 'Name 1' )
+*                                              ( employee = '2' manager = '1' name = 'Name 2' )
+*                                              ( employee = '3' manager = '2' name = 'Name 3' )
+*                                              ( employee = '4' manager = '2' name = 'Name 4' )
+*                                              ( employee = '5' manager = '' name = 'Name 5' )
+*                                              ( employee = '6' manager = '5' name = 'Name 6' )
+*                                              ( employee = '7' manager = '5' name = 'Name 7' )
+*                                              ( employee = '8' manager = '7' name = 'Name 8' )
+*                                              ( employee = '9' manager = '8' name = 'Name 9' )
+*                                              ( employee = '10' manager = '8' name = 'Name 10' )
+*                                              ) ).
 
-   MODIFY zdatasource_3 FROM TABLE @( VALUE #( ( id = '11'
-                                                    name3 = 'value11'
-                                                    datasource3 = 'Source3' )
-                                                 ( id = '08'
-                                                    name3 = 'value8'
-                                                    datasource3 = 'Source2' )
-                                                 ( id = '03'
-                                                    name3 = 'value3'
-                                                    datasource3 = 'Source2' )
-                                                 ( id = '12'
-                                                    name3 = 'value12'
-                                                    datasource3 = 'Source3' )
-                                                 ( id = '13'
-                                                    name3 = 'value13'
-                                                    datasource3 = 'Source3' )
-                                                  ( id = '14'
-                                                    name3 = 'value14'
-                                                    datasource3 = 'Source3' ) ) ).
+
+    select * from /dmo/travel into table @data(lt_result).
+
+    select from /dmo/travel
+    fields *
+    into table @data(lt_result2).
+
+    select from /dmo/travel
+    fields travel_id, begin_date
+    where status = 'O'
+    into table @data(lt_result3).
 
 
   ENDMETHOD.
